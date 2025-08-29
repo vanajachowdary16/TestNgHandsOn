@@ -32,8 +32,7 @@ public class SearchProductandTitle {
     public void testProductSearchandTitle() {
         homePage.searchProduct();
         homePage.selectFirstProduct();
-        BaseTest.swtichToWindow();
-        homePage.getProductTitle();
+        BaseTest.switchToChildWindow();
         System.out.println(homePage.getProductTitle());
     }
 }

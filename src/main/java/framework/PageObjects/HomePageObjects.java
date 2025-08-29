@@ -7,10 +7,7 @@ import org.openqa.selenium.WebElement;
 import framework.Utilities.BaseTest;
 
 public class HomePageObjects extends BaseTest {
-
-    WebDriver driver;
-
-    // Locators only
+    
     public final static By searchBar = By.xpath("//input[@title='Search for Products, Brands and More']");
     public final static By firstProduct = By.xpath("(//a[@class='WKTcLC'])[1]");
     public final static By productTitleXpath = By.xpath("//h1[@class='_6EBuvT']");
@@ -22,20 +19,18 @@ public class HomePageObjects extends BaseTest {
     }
 
     public void searchProduct() {
-        BaseTest.findElement(driver, searchBar);
-        BaseTest.sendKeys(driver, searchBar, product);
+        BaseTest.findElementByLocator(driver, searchBar);
+        BaseTest.sendKeysInput(driver, searchBar, product);
     }
 
     public void selectFirstProduct() {
-        BaseTest.findElement(driver, firstProduct).click();
+        BaseTest.findElementByLocator(driver, firstProduct).click();
     }
 
     public String getProductTitle() {
     	BaseTest.explicitWait(productTitleXpath);
-        WebElement product = BaseTest.findElement(driver, productTitleXpath);
-        BaseTest.jsScrollToElement(driver, product);
-        return product.getText();
-       
+        WebElement product = BaseTest.findElementByLocator(driver, productTitleXpath);
+        return product.getText();       
     }  
     
 }
