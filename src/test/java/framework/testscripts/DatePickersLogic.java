@@ -16,9 +16,6 @@ public class DatePickersLogic extends BaseTest {
 	static DatePickersLogicPageObjects datepickerslogic;
 	public final static String datePickerTestUrl="https://testautomationpractice.blogspot.com/";
 	
-
-;
-	
 @BeforeClass
 public void setUp() {
 	
