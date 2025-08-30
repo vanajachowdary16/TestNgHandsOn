@@ -7,12 +7,12 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import framework.PageObjects.DatePickerPageObjects;
+import framework.PageObjects.RedbusDatePickerPageObjects;
 import framework.Utilities.BaseTest;
 
 public class RedBusDatePickerTest {
 	WebDriver driver;
-	DatePickerPageObjects datepicker;
+	RedbusDatePickerPageObjects datepicker;
 	public final static String redbusUrl ="https://www.redbus.in/";
 	public final static String expMonthYear="Dec, 2025";
 	
@@ -21,7 +21,7 @@ public class RedBusDatePickerTest {
 		
 		BaseTest.launchBrowser();
 		driver=BaseTest.getDriver();
-		datepicker= new DatePickerPageObjects(driver);
+		datepicker= new RedbusDatePickerPageObjects(driver);
 		driver.get(redbusUrl);	
 	}
 	 @AfterSuite
