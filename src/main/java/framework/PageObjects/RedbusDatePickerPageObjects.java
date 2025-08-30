@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import framework.Utilities.BaseTest;
 
-public class DatePickerPageObjects extends BaseTest{
+public class RedbusDatePickerPageObjects extends BaseTest{
 	
 	
 	public final static By calendarLocator= By.xpath("//div[@class='dateInputWrapper___c8345a']");
@@ -25,7 +25,7 @@ public class DatePickerPageObjects extends BaseTest{
 
 	
 	
-	public DatePickerPageObjects(WebDriver driver) {
+	public RedbusDatePickerPageObjects(WebDriver driver) {
 		this.driver = driver;	
 	}
 	public void navigateToMonth(WebDriver driver, String expMonthYear) throws ParseException {
