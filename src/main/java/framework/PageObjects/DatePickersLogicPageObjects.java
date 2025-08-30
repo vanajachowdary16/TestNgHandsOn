@@ -81,8 +81,8 @@ public class DatePickersLogicPageObjects extends BaseTest {
 			}
 		}
 		
-		String selectedDate = driver.findElement(By.id("txtDate")).getText();
-		System.out.println("selected date is" +selectedDate);
+		//String selectedDate = driver.findElement(By.id("txtDate")).getAttribute("txtDate");
+		//System.out.println("selected date is : " +selectedDate);
 	}
 
 	// Convert string to Month enum
