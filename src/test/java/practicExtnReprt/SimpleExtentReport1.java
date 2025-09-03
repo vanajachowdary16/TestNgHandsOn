@@ -70,8 +70,9 @@ public class SimpleExtentReport1 {
     public static String captureScreen(WebDriver driver) throws IOException {
     	
     	File srcFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    	File destFile = new File("reports/images" +System.currentTimeMillis()+ ".png");
+    	File destFile = new File("reports/images/" +System.currentTimeMillis()+ ".png");
     	String absolute_screen =destFile.getAbsolutePath();
+    	System.out.println(absolute_screen);
     	FileUtils.copyFile(srcFile, destFile);
 		return absolute_screen;
     	
