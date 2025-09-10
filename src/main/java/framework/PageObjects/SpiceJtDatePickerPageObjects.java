@@ -17,6 +17,9 @@ public class SpiceJtDatePickerPageObjects extends BaseTest{
 	public SpiceJtDatePickerPageObjects(WebDriver driver) {
 		this.driver = driver;	}
 	
+	//div[contains(@data-test-id,"October-2025")]
+	//div[contains(@data-test-id,'"+ requiredMonthyear + "')]
+	
 	public static String requiredYear="2025";
 	public static String requiredMonth="December";
 	public static String requiredDate="25";
@@ -29,7 +32,7 @@ public class SpiceJtDatePickerPageObjects extends BaseTest{
 	public static String monthxpath ="//div[contains(@class,'css-76zvg2') and contains(text(),'2025')]";
 	
 	public final static By monthYearLocator = By.xpath(monthxpath);
-	public final static String selectDay = "//div[@data-testid='undefined-calendar-day-" + requiredDate + "']";
+	public final static String selectDay = "//div[@data-testid='undefined-calendar-day-25']";
 
 	public final static By selectDateXpath = By.xpath(selectDay);
 	
@@ -60,11 +63,19 @@ public class SpiceJtDatePickerPageObjects extends BaseTest{
 	            System.out.println("✅ Yes, the date is correct: " + currentMonth + " " + currentYear);
 	            dt.click();
 	            Thread.sleep(5000);
-	            WebElement element = driver.findElement(monthYearLocator);
-	            ((JavascriptExecutor) driver).executeScript("arguments.scrollIntoView(true);", element);
-	            WebElement element1 = driver.findElement(selectDateXpath);
-	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
+	           WebElement element = driver.findElement(monthYearLocator);
+	           ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	           element.findElement(selectDateXpath).click();
+	          /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	           WebElement date = wait.until(ExpectedConditions.elementToBeClickable(
+	               By.xpath("//div[@data-testid='undefined-calendar-day-21']")));
+	           date.click();*/
+
+	           // WebElement element1 = driver.findElement(selectDateXpath);
+	            //((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
 	         
+	            
+
 	            
 	            String selectdDate = driver.findElement(actualDate).getText();
 	            System.out.println("🎯 Selected date is: " + selectedDate);
