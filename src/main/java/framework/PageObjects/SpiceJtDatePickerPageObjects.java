@@ -48,56 +48,30 @@ public class SpiceJtDatePickerPageObjects extends BaseTest{
 	String selectedYear  = parts[3];
 	String testXpath = driver.findElement(By.xpath(alldivsXpath)).getText();
 	System.out.println("test xpath get text is" +testXpath);
-	
-	List<WebElement> myMonthYear = driver.findElements(By.xpath(alldivsXpath));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	 WebElement fromInput = wait.until(ExpectedConditions.elementToBeClickable(
+             By.xpath("//div[@data-testid='to-testID-origin']//input")));
+     fromInput.click();
+     fromInput.clear();
+     fromInput.sendKeys("Chennai");
+     wait.until(ExpectedConditions.elementToBeClickable(
+             By.xpath("//div[@data-testid='to-testID-origin']"))).click();
+   //Select To City
+     WebElement toInput = wait.until(ExpectedConditions.elementToBeClickable(
+             By.xpath("//div[@data-testid='to-testID-destination']//input")));
+     toInput.click();
+     toInput.clear();
+     toInput.sendKeys("Delhi");
+     //Click To field
+     wait.until(ExpectedConditions.elementToBeClickable(
+         By.xpath("//div[@data-testid='to-testID-destination']"))).click();
+     //Select from list directly
+     wait.until(ExpectedConditions.elementToBeClickable(
+         By.xpath("//div[contains(text(),'Delhi')]"))).click();
+     Thread.sleep(2000);
+     driver.findElement(By.xpath("//div[@data-testid=\"undefined-month-October-2025\"]//following-sibling::*[contains(@data-testid,'calendar-day-1')]")).click();
 
-	for (WebElement dt : myMonthYear) {
-	    String testGetText = dt.getText().trim();
-
-	    String[] testParts = testGetText.split(" ");
-	    if (testParts.length >= 2) {
-	        String currentMonth = testParts[0];
-	        String currentYear = testParts[1];
-
-	        if (currentMonth.equals(requiredMonth) && currentYear.equals(requiredYear)) {
-	            System.out.println("✅ Yes, the date is correct: " + currentMonth + " " + currentYear);
-	            dt.click();
-	            Thread.sleep(5000);
-	           WebElement element = driver.findElement(monthYearLocator);
-	           ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-	           element.findElement(selectDateXpath).click();
-	          /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	           WebElement date = wait.until(ExpectedConditions.elementToBeClickable(
-	               By.xpath("//div[@data-testid='undefined-calendar-day-21']")));
-	           date.click();*/
-
-	           // WebElement element1 = driver.findElement(selectDateXpath);
-	            //((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
-	         
-	            
-
-	            
-	            String selectdDate = driver.findElement(actualDate).getText();
-	            System.out.println("🎯 Selected date is: " + selectedDate);
-	           //driver.findElement(selectDateXpath).click();
-	            break; // stop loop once correct month-year is found
-	        }
-	        // Do nothing if it doesn’t match
-	    }
-	    // Skip if format is invalid
+	String depatureDate =driver.findElement(By.xpath("(//div[contains(text(), '2025')])[2]")).getText();
+	System.out.println("selected depature date is " +depatureDate);
 	}
-	
-
-
-
-
-	
-	
-	/*List<WebElement> allMonths = driver.findElements(monthYearLocator);
-	for(WebElement mn : allMonths) {
-		String monthvalue = mn.getText();
-		System.out.println(monthvalue);
-	}*/
-	}
-
 }
