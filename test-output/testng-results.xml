@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-13T19:52:59 IST" name="Default suite" finished-at="2025-08-13T19:53:12 IST" duration-ms="13552">
+  <suite started-at="2025-09-13T20:01:48 IST" name="Default suite" finished-at="2025-09-13T20:02:02 IST" duration-ms="14217">
     <groups>
     </groups>
-    <test started-at="2025-08-13T19:52:59 IST" name="Default test" finished-at="2025-08-13T19:53:12 IST" duration-ms="13552">
-      <class name="framework.testscripts.SearchProductandTitle">
-        <test-method is-config="true" signature="setUP()[pri:0, instance:framework.testscripts.SearchProductandTitle@14028087]" started-at="2025-08-13T19:52:59 IST" name="setUP" finished-at="2025-08-13T19:53:05 IST" duration-ms="5747" status="PASS">
+    <test started-at="2025-09-13T20:01:48 IST" name="Default test" finished-at="2025-09-13T20:02:02 IST" duration-ms="14217">
+      <class name="framework.testscripts.SpiceJtDatePicker">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:framework.testscripts.SpiceJtDatePicker@592e843a]" started-at="2025-09-13T20:01:48 IST" name="setUp" finished-at="2025-09-13T20:01:58 IST" duration-ms="9925" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUP -->
-        <test-method signature="testProductSearchandTitle()[pri:0, instance:framework.testscripts.SearchProductandTitle@14028087]" started-at="2025-08-13T19:53:05 IST" name="testProductSearchandTitle" finished-at="2025-08-13T19:53:12 IST" duration-ms="7746" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="testSpicejtDatePicker()[pri:0, instance:framework.testscripts.SpiceJtDatePicker@592e843a]" started-at="2025-09-13T20:01:58 IST" name="testSpicejtDatePicker" finished-at="2025-09-13T20:02:02 IST" duration-ms="4240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testProductSearchandTitle -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:framework.testscripts.SearchProductandTitle@14028087]" started-at="2025-08-13T19:53:12 IST" name="tearDownBrowser" finished-at="2025-08-13T19:53:13 IST" duration-ms="348" status="PASS">
+        </test-method> <!-- testSpicejtDatePicker -->
+        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:framework.testscripts.SpiceJtDatePicker@592e843a]" started-at="2025-09-13T20:02:02 IST" name="tearDownBrowser" finished-at="2025-09-13T20:02:02 IST" duration-ms="332" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownBrowser -->
-      </class> <!-- framework.testscripts.SearchProductandTitle -->
+      </class> <!-- framework.testscripts.SpiceJtDatePicker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
