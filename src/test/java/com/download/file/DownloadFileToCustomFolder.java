@@ -10,9 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DownloadFileToCustomFolder {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // path for your custom download folder
-        String downloadFolderPath = "C:\\selenium-testng\\Testingselenium\\framework\\JenkinsDownloads";
+        String downloadFolderPath = System.getProperty("user.dir")+File.separator +"JenkinsDownloads";
         File jenkinsDownloadDir = new File(downloadFolderPath);
 
         if (!jenkinsDownloadDir.exists()) {
@@ -42,5 +42,24 @@ public class DownloadFileToCustomFolder {
 
         wd.get("https://get.jenkins.io/war-stable/2.528.1/jenkins.war");
         System.out.println("Browser launched and navigating to Jenkins download URL.");
+        
+        
+        //check if the file has been downloaded successfully
+        File jenkinsFile = new File(jenkinsDownloadDir,"jenkins.war");
+        
+        int timeoutSeconds = 30;
+        int elapsedTime=0;
+        while(elapsedTime<timeoutSeconds && !jenkinsFile.exists()) {
+        	Thread.sleep(1000);
+        	elapsedTime++;
+        	System.out.println("waiting for file to download...");
+        }
+        if(jenkinsFile.exists()) {
+        	System.out.println("jenkins file downloaded successfully...");
+        }
+        else {
+        	System.err.println("file could not be downloaded...time out error");
+        }
+        
     }
 }
